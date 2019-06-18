@@ -1,2 +1,2 @@
-# Chamado_T-cnico
+# Chamado_Tecnico
 Projeto de DWEB, Chamado Técnico-IFPB
