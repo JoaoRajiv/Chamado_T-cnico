@@ -1,0 +1,36 @@
+CREATE TABLE usuario(
+        Matricula VARCHAR(30)NOT NULL,
+        Senha VARCHAR(20)NOT NULL,
+        Nome VARCHAR(30)NOT NULL,
+	Type TEXT NOT NULL,
+        PRIMARY KEY(Matricula)
+);
+
+CREATE TABLE historico (	
+  	id integer NOT NULL,
+  	professorh character varying(30) NOT NULL,
+  	ambienteh character varying(20) NOT NULL,
+  	defeitoh character varying(100) NOT NULL,
+  	PRIMARY KEY (id)
+);
+
+CREATE TABLE chamada (
+	idchamada integer NOT NULL,
+	professor character varying(30) NOT NULL,
+	ambiente character varying(20) NOT NULL,
+	defeito character varying(100) NOT NULL,
+	PRIMARY KEY (idchamada)
+);
+
+INSERT INTO usuario (matricula, senha, nome, type) VALUES ('1', '1234', 'Rajiv', 'Admin')
+	
+	
+        
+
+
+
+
+    
+
+
+        

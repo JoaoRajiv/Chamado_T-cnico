@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>histórico</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: black;
+            background-size: cover
+        }
+
+        .historico-box {
+            width: 500px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .historico-box h1 {
+            
+            font-size: 40px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 20px;
+            padding: 13px 0;
+        }
+        .link {
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 20px 0;
+            margin: 80px 0;
+        }
+        
+        .link a:hover{
+            color:#4caf50
+        }
+
+        .link a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #4caf50;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="historico-box">
+        <h1>Histórico</h1>
+        <form action="/chamadas" method="POST">
+            <table border="1" cellpadding="6">
+                <tr>
+                    <td>ID</td>
+                    <td>Professor</td>
+                    <td>Ambiente</td>
+                    <td>Problema</td>
+                    <td>Status</td>
+                    
+                </tr>
+        {% for x in historico %}
+            <tr>
+                <td>{{ x[0] }}</td>
+                <td>{{ x[1] }}</td>
+                <td>{{ x[2] }}</td>
+                <td>{{ x[3] }}</td>   
+                <td>Atendido</td>            
+            </tr>
+        {%endfor%}
+        </table>
+        
+        {% if tipo == 'Admin'%}
+        <div class="link">
+        <a href="{{ url_for('menuadmin')}}">Voltar</a> 
+        </div>
+        {% endif %}
+        {% if tipo == 'Tecnico'%}
+        <div class="link">
+        <a href="{{ url_for('menutec')}}">Voltar</a> 
+        </div>
+        {% endif %}
+        {% if tipo == 'Professor'%}
+        <div class="link">
+        <a href="{{ url_for('menuprof')}}">Voltar</a> 
+        </div>
+        {% endif %}
+
+        
+    {%endblock%}
+</body>
+
+</html>

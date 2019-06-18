@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar Ambiente</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: black;
+            background-size: cover
+        }
+
+        .ambient-box {
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .ambient-box h1 {
+            float: left;
+            font-size: 40px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 50px;
+            padding: 13px 0;
+        }
+
+        .textbox {
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 8px 0;
+            margin: 8px 0;
+            border-bottom: 1px solid #4caf50;
+        }
+
+        .textbox input {
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 18px;
+            width: 90%;
+            color: white
+        }
+
+        .botao {
+            width: 100%;
+            background: none;
+            border: 2px solid #4caf50;
+            color: white;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background: linear-gradient(to bottom, black 0%, #4caf50 100%);
+        }
+    </style>
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <form action="/cadastrarambiente" method="POST">
+        <div class="ambient-box">
+            <h1>Cadastrar ambiente</h1>
+
+            <div class="textbox">
+                <input type="text" placeholder="Nome" name="amb" value="" />
+            </div>
+
+            <input class="botao" type="submit" value="Cadastrar" />
+        </div>
+    </form>
+    {%endblock%}
+</body>
+
+</html>

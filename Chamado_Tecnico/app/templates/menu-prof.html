@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Professor</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: black;
+            background-size: cover
+        }
+        .menu-box {
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        .menu-box h1 {
+            float: left;
+            font-size: 40px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 50px;
+            padding: 13px 0;
+        }
+        .menu-box h3 {
+            float: right;
+            font-size: 30px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 50px;
+            padding: 13px 0;
+        }
+        .link {
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 20px 0;
+            margin: 80px 0;
+        }
+        .link a:hover{
+            color:#4caf50
+        }
+        .link a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #4caf50;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="menu-box">
+        <h1>MENU</h1>
+        <h3>Bem-Vindo {{ session_nome }}</h3>
+        <div class="link">            
+            <div>
+                <a href="{{ url_for('fazer_chamada')}}">Fazer chamada</a> <br><br><br>
+                <a href="{{ url_for('index')}}">Voltar</a>        
+            </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

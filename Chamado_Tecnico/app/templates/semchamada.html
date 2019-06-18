@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Erro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: black;
+            background-size: cover
+        }
+
+        .chamada-box {
+            width: 280px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .chamada-box h1 {
+            float:left;
+            font-size: 20px;            
+            margin-bottom: 50px;
+            padding: 13px 0;
+        }
+        .link {
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            top: 70%
+        }
+
+        .link a:hover{
+            color:#4caf50
+        }
+
+        .link a {
+            float: center;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #4caf50;
+            margin: 50px
+        }
+    </style>
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="chamada-box">
+    <h1>NENHUMA CHAMADA PENDENTE</h1> <br><br><br>
+    </div>
+    <div class="link">
+    <a href="{{ url_for('menutec')}}">Voltar</a> 
+    </div>
+    {%endblock%}
+</body>

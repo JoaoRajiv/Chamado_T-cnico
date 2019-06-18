@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chamadas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: black;
+            background-size: cover
+        }
+
+        .chamada-box {
+            width: 280px;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .chamada-box h1 {
+            float: left;
+            font-size: 40px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 50px;
+            padding: 13px 0;
+        }
+    </style>
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <form action="/chamadas" method="POST">
+    <div class="chamada-box">
+        <h1>Chamadas</h1>    
+        <table border="2" cellpadding="7">
+            <tr>
+                <td>ID</td>
+                <td>Professor</td>
+                <td>Ambiente</td>
+                <td>Problema</td>
+                <td rowspan="1"><input class="botao" type="submit" value="Atender" /></td>
+                
+            </tr>
+            <tr>
+            <td>{{ chamadas[0][0] }}</td>
+            <td>{{ chamadas[0][1] }}</td>
+            <td>{{ chamadas[0][2] }}</td>
+            <td>{{ chamadas[0][3] }}</td>
+            
+            </tr>
+            {% for chamada in chamadas[1:] %}
+            <tr>            
+            <td>{{ chamada[0] }}</td>
+            <td>{{ chamada[1] }}</td>
+            <td>{{ chamada[2] }}</td>
+            <td>{{ chamada[3] }}</td>
+            </tr>
+            {%endfor%}
+        </table>
+
+        </form>
+        </div>
+    {% endblock %}
+</body>
+
+</html>
